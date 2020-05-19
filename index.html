@@ -12,18 +12,21 @@
 
     <title>Rewards and Categories!</title>
     <style>
-        .div1,
-        .div2 {
-            float: left;
-            width: 100px;
-            height: 35px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid black;
-        }
-
         .droptarget {
             float: left;
+        }
+
+        .jumbotron {
+            top: 100px;
+        }
+        body {
+            background-color: teal;
+        }
+        .text {
+            color: teal;
+        }
+        hr {
+            border: 0.5px solid teal;
         }
     </style>
 </head>
@@ -35,15 +38,15 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Enter the following details</h5>
+                    <h5 class="modal-title text">Enter the following details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label for="fname"># of Categories:</label>
+                    <label for="fname"class="text"># of Categories:</label>
                     <input type="text" id="input-categories" name="categories"><br><br>
-                    <label for="rewards"># of Rewards:</label>
+                    <label for="rewards" class="text"># of Rewards:</label>
                     <input type="text" id="input-rewards" name="lname"><br><br>
                 </div>
                 <div class="modal-footer">
@@ -52,13 +55,14 @@
             </div>
         </div>
     </div>
-
-    <div id="container">
+<!-- Container to hold categories and rewards -->
+    <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-8 jumbotron shadow-lg p-3 mb-5 bg-white rounded">
                 <div id="heading"></div>
                 <div id="nextRows"></div>
+                <hr>
                 <div id="rewards"></div>
             </div>
             <div class="col-md-2"></div>

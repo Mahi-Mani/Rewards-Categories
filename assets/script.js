@@ -1,18 +1,22 @@
 $(document).ready(function () {
+    // To trigger modal upon refresh
     jQuery.noConflict();
     $("#questionModal").modal("show");
 
+    // Event listener for submit button inside modal
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
         var categories = $("#input-categories").val().trim();
         var rewards = $("#input-rewards").val().trim();
         console.log(categories);
         console.log(rewards);
+        // Call respective functions to create categories and rewards based on user input
         generateHeading(categories);
         generateNextRows(rewards);
         generateRewards(rewards);
     })
 
+    // Event listeners --- draggable
     document.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("Text", event.target.id);
     });
@@ -21,6 +25,7 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    // Creating a new reward after dropping
     document.addEventListener("drop", function (event) {
         event.preventDefault();
         var data = event.dataTransfer.getData("Text");
@@ -36,6 +41,7 @@ $(document).ready(function () {
         <span>${upperCaseData}</span>
     </div>
 </div>`);
+        // Delete reward from a particular category
         $(`#${data}`).on("click", function (event) {
             event.preventDefault();
             console.log("I'm clicked", this.id);
@@ -43,13 +49,17 @@ $(document).ready(function () {
         })
     });
 
+    // Function to generate heading
     function generateHeading(categories) {
         var rowHeading = $("<div>");
         rowHeading.addClass("row heading");
         // console.log(rowHeading);
         for (var i = 0; i <= categories; i++) {
             var cols = $("<div>");
-            cols.addClass("col-md-1");
+            if (categories <= 5)
+                cols.addClass("col-md-2 text");
+            else
+                cols.addClass("col-md-1 text");
             if (i === 0) {
                 cols.text("Heading");
             } else {
@@ -62,6 +72,7 @@ $(document).ready(function () {
         $("#heading").append("<br>");
     }
 
+    // Function to generate subsequent rows
     function generateNextRows(rewards) {
         var rowNum = 0;
         while (rowNum < rewards) {
@@ -69,7 +80,10 @@ $(document).ready(function () {
             newRow.addClass("row reward" + i);
             for (var i = 0; i < rewards; i++) {
                 var newCol = $("<div>");
-                newCol.addClass("col-md-1 droptarget");
+                if (rewards <= 5)
+                    newCol.addClass("col-md-2 droptarget text");
+                else
+                    newCol.addClass("col-md-1 droptarget text");
                 newCol.attr("id", "c" + i);
                 if (i === 0) {
                     newCol.text("R" + (rowNum + 1));
@@ -83,18 +97,18 @@ $(document).ready(function () {
         }
     }
 
+    // Function to generate rewards to click and drag
     function generateRewards(rewards) {
         for (var i = 0; i < rewards; i++) {
             var mainDiv = $("<div>");
             mainDiv.addClass("r" + (i + 1));
             mainDiv.append(`<div class="card droptarget" id=r${i + 1}-0 draggable="true" style="width: 5rem; height: 5rem;">
-        <span class="close-icon float-right"><i class="fa fa-times"></i></span>
+        <span class="close-icon float-right"><i class="fa fa-times text"></i></span>
         <div class="card-body">
-            <span><small>R${i + 1}</small></span>
+            <span class="text"><small>R${i + 1}</small></span>
         </div>
     </div>`);
             $("#rewards").append(mainDiv);
         }
-
     }
 });
