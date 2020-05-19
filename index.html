@@ -24,128 +24,22 @@
 
         .droptarget {
             float: left;
-            width: 25px;
-            height: 50px;
-            margin: 15px;
-            padding: 10px;
-            border: 1px solid #aaaaaa;
         }
     </style>
 </head>
 
 <body>
-    <div id="heading"></div>
-    <div id="nextRows"></div>
-    <!-- <div class="row heading">
-        <div class="col-md-2">Heading</div>
-        <div class="col-md-2">C1</div>
-        <div class="col-md-2">C2</div>
-        <div class="col-md-2">C3</div>
-        <div class="col-md-2">C4</div>
-        <div class="col-md-2">C5</div>
-    </div>
-    <br>
-    <div class="row reward1">
-        <div class="col-md-2">R1</div>
-        <div class="col-md-2 droptarget" id="c1"></div>
-        <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
-    <br>
-    <div class="row reward2">
-        <div class="col-md-2">R2</div>
-        <div class="col-md-2" id="c1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
-    <br>
-    <div class="row reward3">
-        <div class="col-md-2">R3</div>
-        <div class="col-md-2" id="c1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
-    <br>
-    <div class="row reward4">
-        <div class="col-md-2">R4</div>
-        <div class="col-md-2" id="c1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
-    <br>
-    <div class="row reward5">
-        <div class="col-md-2">R5</div>
-        <div class="col-md-2" id="r5c1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>  -->
-
-
-    <div id="rewards">
-        <!-- <div class="card droptarget" id="r1-0" draggable="true" style="width: 5rem; height: 5rem;">
-            <div class="card-body">
-                <span>R7</span>
+    <div id="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div id="heading"></div>
+                <div id="nextRows"></div>
+                <div id="rewards"></div>
             </div>
-        </div> -->
-        <div class="r1">
-            <div class="card droptarget" id="r1-0" draggable="true" style="width: 5rem; height: 5rem;">
-                <div class="card-body">
-                    <span>R1</span>
-                </div>
-            </div>
-        </div>
-        <div class="r2">
-            <div class="card droptarget" id="r2-0" draggable="true" style="width: 5rem; height: 5rem;">
-                <div class="card-body">
-                    <span>R2</span>
-                </div>
-            </div>
-        </div>
-        <div class="r3">
-            <div class="card droptarget" id="r3-0" draggable="true" style="width: 5rem; height: 5rem;">
-                <div class="card-body">
-                    <span>R3</span>
-                </div>
-            </div>
-        </div>
-        <div class="r4">
-            <div class="card droptarget" id="r4-0" draggable="true" style="width: 5rem; height: 5rem;">
-                <div class="card-body">
-                    <span>R4</span>
-                </div>
-            </div>
-        </div>
-        <div class="r5">
-            <div class="card droptarget" id="r5-0" draggable="true" style="width: 5rem; height: 5rem;">
-                <div class="card-body">
-                    <span>R5</span>
-                </div>
-            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
-
-    <!-- <div class="droptarget"></div> -->
-
-    <!-- <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-    </div>
-
-    <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-    
-    <div id="r2" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <span id="drag2" draggable="true" ondragstart="drag(event)"
-            class="shadow-lg p-3 mb-5 bg-white rounded">R2</span>
-    </div>  -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -155,6 +49,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
