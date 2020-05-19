@@ -12,8 +12,8 @@
 
     <title>Hello, world!</title>
     <style>
-        #div1,
-        #div2,
+        .div1,
+        .div2,
         #r1 {
             float: left;
             width: 100px;
@@ -22,11 +22,21 @@
             padding: 10px;
             border: 1px solid black;
         }
+
+        /* .droptarget {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        } */
     </style>
 </head>
 
 <body>
     <div id="heading"></div>
+    <div id="nextRows"></div>
     <!-- <div class="row heading">
         <div class="col-md-2">Heading</div>
         <div class="col-md-2">C1</div>
@@ -38,7 +48,7 @@
     <br>
     <div class="row reward1">
         <div class="col-md-2">R1</div>
-        <div class="col-md-2" id="c1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="col-md-2 droptarget" id="c1"></div>
         <div class="col-md-2" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -79,21 +89,26 @@
         <div class="col-md-2" id="c3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="col-md-2" id="c4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="col-md-2" id="c5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div> -->
+    </div>  -->
 
-    <!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="droptarget">
+        <!-- <p draggable="true" id="dragtarget">Drag me!</p> -->
+        <span id="dragtarget"
+            class="shadow-lg p-3 mb-5 bg-white rounded">R2</span>
     </div>
 
-    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget"></div>
 
-    <div id="r1" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <span id="drag1" draggable="true" ondragstart="drag(event)"
-            class="shadow-lg p-3 mb-5 bg-white rounded">R1</span>
+    <!-- <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
+
+    <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    
     <div id="r2" ondrop="drop(event)" ondragover="allowDrop(event)">
         <span id="drag2" draggable="true" ondragstart="drag(event)"
             class="shadow-lg p-3 mb-5 bg-white rounded">R2</span>
-    </div> -->
+    </div>  -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
