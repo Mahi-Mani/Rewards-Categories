@@ -35,13 +35,17 @@ document.addEventListener("dragstart", function(event) {
     console.log(value);
     var upperCaseData = value.toUpperCase();
     event.target.appendChild(document.getElementById(data));
-    $("." + value).html(`<div class="droptarget">
-        <span id=${data}-${number} draggable="true" class="shadow-lg p-3 mb-5 bg-white rounded">${upperCaseData}</span>
-    </div>`);
+    $("." + value).html(`<div class="card droptarget" id=${data}-${number} draggable="true" style="width: 5rem; height: 5rem;">
+    <div class="card-body">
+        <span>${upperCaseData}</span>
+    </div>
+</div>`);
+    $(`#${data}`).on("click", function(event) {
+        event.preventDefault();
+        console.log("I'm clicked", this.id);
+        $(`#${data}`).remove();
+    })
   });
-
-
-console.log("Inside script");
 
 function generateHeading() {
     var rowHeading = $("<div>");
@@ -78,13 +82,10 @@ function generateNextRows() {
             // newCol.attr("ondrop", drop(event));
             // newCol.attr("ondragover", allowDrop(event));
             newRow.append(newCol);
-    //         $("#c" + i).on("drop", function (event) {
-    //             event.preventDefault();
-    //             $("#rewards").html(`<div class="droptarget">
-    //     <!-- <p draggable="true" id="dragtarget">Drag me!</p> -->
-    //     <span id="dragtarget1" draggable="true" class="shadow-lg p-3 mb-5 bg-white rounded">R1</span>
-    // </div>`);
-    //         });
+            // $("#c" + i).on("drop", function (event) {
+            //     event.preventDefault();
+            //     console.log(event.target.id);
+            // });
             // $("#c" + i).on("dragover", function (event) {
             //     console.log("1");
             //     event.preventDefault();
