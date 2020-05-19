@@ -29,7 +29,15 @@ document.addEventListener("dragstart", function(event) {
   document.addEventListener("drop", function(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("Text");
+    console.log(data);
+    var number = data.split("-")[1];
+    var value = data.split("-")[0];
+    console.log(value);
+    var upperCaseData = value.toUpperCase();
     event.target.appendChild(document.getElementById(data));
+    $("." + value).html(`<div class="droptarget">
+        <span id=${data}-${number} draggable="true" class="shadow-lg p-3 mb-5 bg-white rounded">${upperCaseData}</span>
+    </div>`);
   });
 
 
@@ -65,18 +73,18 @@ function generateNextRows() {
             newCol.attr("id", "c" + i);
             if (i === 0) {
                 newCol.text("R" + (rowNum + 1));
+                newCol.removeClass("droptarget");
             }
             // newCol.attr("ondrop", drop(event));
             // newCol.attr("ondragover", allowDrop(event));
             newRow.append(newCol);
-            // $("#c" + i).on("drop", function (event) {
-            //     event.preventDefault();
-            //     console.log(event.dataTransfer);
-            //     var data = event.dataTransfer.getData("text");
-            //     console.log(data);
-            //     event.target.appendChild(document.getElementById(data));
-            //     // drag(event);
-            // });
+    //         $("#c" + i).on("drop", function (event) {
+    //             event.preventDefault();
+    //             $("#rewards").html(`<div class="droptarget">
+    //     <!-- <p draggable="true" id="dragtarget">Drag me!</p> -->
+    //     <span id="dragtarget1" draggable="true" class="shadow-lg p-3 mb-5 bg-white rounded">R1</span>
+    // </div>`);
+    //         });
             // $("#c" + i).on("dragover", function (event) {
             //     console.log("1");
             //     event.preventDefault();
